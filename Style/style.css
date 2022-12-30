@@ -27,7 +27,42 @@ body{
   overflow-x: hidden;
   transition:all 0.5s ease;
 }
-
+.loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #333333;
+  z-index: 9999999;
+}
+.loading .spinner{
+  width: 60px;
+  height: 60px;
+  border:2px solid transparent;
+  border-top: 2px solid var(--mainColor);
+  border-bottom:2px solid var(--mainColor);
+  border-radius: 50%;
+  animation:Spin 0.9s  infinite linear;
+}
+@keyframes Spin {
+  0%{
+    transform:rotateZ(0);
+  }
+  25%{
+    transform:rotateZ(90deg);
+  }
+  50%{
+    transform:rotateZ(180deg);
+  }
+  75%{
+    transform:rotateZ(270deg);
+  }
+  100%{
+    transform:rotateZ(360deg);
+  }
+}
 ::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
