@@ -17,3 +17,11 @@ ScrollTop.onclick=()=>{
 DarkMode.onclick=()=>{
   body.classList.toggle("dark");
 }
+$(window).on("load", function () {
+  $(".spinner").fadeOut(2000, function () {
+      $(this).parent().fadeOut(2000, function () {
+          $(this).remove();
+      });
+  });
+  AOS.init({duration: 1200, once: true });
+});
